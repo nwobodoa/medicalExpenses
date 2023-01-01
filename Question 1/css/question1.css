@@ -1,0 +1,91 @@
+.navbar{
+    font-size: 20px;
+}
+body{
+    background-image: url("images/bg_image.png");
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.container{
+    display: grid;    
+    grid-template-columns: 1fr 2fr 1.5fr;
+    gap: 10px;
+    grid-template-areas: "welcome welcome video"
+                        "gaming music/entertainment video";
+
+}
+.gaming{grid-area: 'gaming';}
+.welcome{grid-area: 'welcome';}
+.music/entertainment{grid-area: 'music/entertainment';}
+.video{grid-area: 'Video';}
+@media only screen and (max-width:768px) {
+    .container{
+        grid-template-areas: 'welcome'
+                            'gaming'
+                            'music/entertainment'
+                            'video';
+    }
+    
+}
+.mobile{
+    font-style: italic;
+    font-weight: bold;
+    color: blue;
+}
+.video{
+    width: 100%;
+    max-height:auto
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: 20px;
+
+}
+
+
+.sec1{
+    width:45%;
+    margin-right: 40px; 
+    height: auto;
+}
+.sec2{
+    width:45%;
+    margin-right: 40px; 
+    height: auto;
+}.sec3{
+    width:45%;
+    margin-right: 40px; 
+    height: auto;
+}.sec4{
+    width:45%;    
+    margin-right: 40px;
+    height: auto; 
+}
+
+.img{
+    width: 100%;
+    height: auto;
+}
+#span{
+    font-style: italic;
+    font-weight: bold;
+
+}
+ul > li{
+    list-style:lower-roman;
+}
+#fig{
+list-style:decimal ;
+    }
+    dt{
+        font-weight: bold;
+        margin-left: 25px;
+    }
+    #li > li{
+        list-style:lower-roman;
+        
+    }

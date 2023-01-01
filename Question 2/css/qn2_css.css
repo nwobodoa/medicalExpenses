@@ -1,0 +1,113 @@
+			body {
+				margin-left: 40px;
+			}
+			legend{
+				font-weight: bold;
+			}
+			.image{
+				border-radius: 50%;
+				height: 35px;
+				width:auto;
+			}
+			
+				h1 {
+	text-align: center;
+	color: navy;
+}
+/*.display {
+	font-weight: bold;
+}*/
+
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+.tbl {
+	width: 150px;
+}
+tr:nth-child(5), tr:nth-child(6){
+	font-weight: bold;
+}
+
+.lab_text{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: center;
+}
+
+.item1 { grid-area: header; 
+		}
+.item2 { grid-area: form; 
+		width: 450px;
+		margin-left: 0px;}
+.item3 { grid-area: result; 
+		width: 450px;
+		}
+.item4 { grid-area: tips; 
+		width: 500px;
+		background-color: #23d0ff;
+		}
+.item5 { grid-area: footer; 
+		text-align: center;
+		
+}
+
+
+.container1 {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'form result tips'
+    'footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 20px;
+}
+
+.container1 > div {
+  text-align: top; 
+  padding: 20px 0;
+  font-size: 20px;
+}
+.item3{
+	background-color: #55aaff;
+}
+
+.aside{
+	text-align: center;
+}
+.tbl_a th  {
+	padding-left:20px;
+	padding-right:20px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+.tbl_a td {
+	padding-left:20px;
+	padding-right:20px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.tbl_a th{
+	text-align: left;
+}
+
+.tbl_a{
+	/*margin: auto;*/
+	margin-left: 20px;
+	/*width:100%;*/
+}
+#tot, #cost5{
+	font-weight: bold;
+}
+.costs {
+	width: 30%;
+}
+#health_tips {
+	padding-left: 30px;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<meta name="" content="">
+
+ <link rel="stylesheet" href="css/qn2_css.css">
+<!-----STUDENT NAME ---
+
+
+
+---------------------->
+
+
+</head>
+<body>
+<h1>CSIS 1280 Final Exam - Fall Semester 2022</h1>
+<hr>
+
+
+<!--- QUESTION 2 ---
+=============================== -->	
+	<div class="container1">
+	<div class="item1">
+	<h1><img src="images/logo.png" class="image" alt="med_logo"> &nbsp;Hospitalization Application</h1>
+	<hr>
+	</div>
+	<div class="item2">
+	<form>
+	<fieldset>
+	<legend>Please select level of care received:</legend>
+		<input type="radio" name="care_level" value="350">
+		<label>Level 1 ($350) </label><br>
+		<input type="radio" name="care_level" value="500"> 
+		<label>Level 2 ($500) </label><br>	
+		<input type="radio" name="care_level" value="1250"> 				
+		<label>Level 3 ($1,250)</label><br>	
+		<input type="radio" name="care_level" value="2500">
+		<label>Level 4 ($2,500)</label>
+		 <br>	
+	</fieldset>	
+	<br>
+	<section id="left">
+	<fieldset>
+		<legend>Diagnostic radiolology services</legend>
+		<input type="checkbox"	name="diagnostics" value="250">
+		<label>Colonoscopy ($250)</label><br>
+		<input type="checkbox"	name="diagnostics" value="550">
+		<label>Cystocopy ($550)</label><br>	
+		<input type="checkbox"	name="diagnostics" value="1250">	
+		<label>CT Scan ($1,250)</label>
+		<br>		
+	</fieldset>
+		
+	</section>	
+<br>
+	<section id="right">
+	<fieldset>
+		<legend>Lab test requested</legend>
+		<input type="checkbox"	name="lab_tests" value="155">
+		<label>Urine Analysis ($155)</label><br>
+		<input type="checkbox"	name="lab_tests" value="135">
+		<label>Stool Analysis ($135)</label><br>
+		<input type="checkbox"	name="lab_tests" value="375">		
+		<label>Blodd Work ($375)</label>
+		<br>		
+	</fieldset>
+		
+	</section>	<br>
+	<section>
+	<fieldset>
+		<legend>Miscellaneous costs</legend>
+			<labeL class="lab_text">Please enter cost of meds:</labeL>
+			<input type="text" name="med_charges" id="meds" size="5"><br><br>
+			<labeL class="lab_text">Please enter rehab charges:</labeL>
+			<input type="text" name="rehab_charges" id="rehab" size="5"><br>
+	</fieldset>
+	</section>	<br>	
+	<fieldset>
+		<legend>Processing</legend><br>
+		<input type="reset" name="reset" id="btn1" value="Clear"> &nbsp; &nbsp;
+	    <input type="button" name="submit" id="btn2" value="Calculate Charges">
+	</fieldset>
+	</form>
+	</div>
+	<div class="item3">
+		<h2 class="aside">Charges Summary</h2>
+		<hr>
+		 <div>
+		<table id="tbl_a" align="center" width="300">
+			<tr><th>Component</th><th>Cost</th></tr>
+			<tr><td>Level of care</td><td class="costs"></td></tr>
+			<tr><td>Diagnostic radiology</td><td class="costs"></td></tr>
+			<tr><td>Lab tests</td><td class="costs"></td></tr>
+			<tr><td>Meds and rehab</td><td class="costs"></td></tr>
+			<tr><td id="tot">Total</td><td id="cost5"></td></tr>
+		</table>
+		</div>
+	</div>
+	<div class="item4">
+		<h2 class="aside">Health Tips</h2>
+		<hr>
+			<p id="health_tips"></p>
+		
+	</div>
+	<div class="item5"> 
+	<hr>
+		&copy; Royal City Medical Services<br>
+		700 Royal Avenue, New Westminster, BC
+	</div>
+	</div>	
+
+<!-- ===========================-->
+<!-- PROVIDE LINKS TO YOUR JS
+		SCRIPTS BELOW 
+ ===============================-->
+
+<script src="scripts/Adanwa-Question2.js"></script>
+
+
+
+<!-- END OF SCRIPT LINKS 
+=================================-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
