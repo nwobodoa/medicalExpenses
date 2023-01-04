@@ -39,9 +39,13 @@ const btnSubmit = document.getElementById("btn2");
 
 
 function addCheckedValues(elements) {
-    return [...elements].filter(el => el.checked)
-        .map(el => parseFloat(el.value))
-        .reduce((acc,curr) => acc + curr,0)
+    let cost = 0
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+            cost += parseFloat(elements[i].value)
+        }
+    }
+    return cost
 }
 
 function formatDisplayCost(element,cost){
