@@ -1,4 +1,5 @@
 //health tips Array
+// alert("hey");
 const HealthTips = ["Eat a healthy diet",
     "Consume less salt and sugar",
     "Reduce intake of harmful fats",
@@ -32,94 +33,104 @@ const HealthTips = ["Eat a healthy diet",
     "Take care of your relationships"];
 
 
-
 let btnReset = document.getElementById("btn1");
 let btnSubmit = document.getElementById("btn2");
+let health_tips = document.getElementById("health_tips");
 
-let totalCost = 0;
 
-const [levelOfCareCost,diagRadiology,labTests,medsAndRehab] = document.getElementsByClassName("costs")
 
+function getCareLevelCost(care_levels) {
+    let cost = 0
+    for (let level of care_levels) {
+        if (level.checked) {
+            cost = parseFloat(level.value)
+        }
+    }
+    return cost
+}
+
+function addDiagnostics(diagnostics) {
+    let cost = 0
+
+        for (let i = 0; i < diagnostics.length; i++) {
+            if (diagnostics[i].checked) {
+                cost += parseFloat(diagnostics[i].value)
+
+            }
+        }
+    return cost
+}
+
+function addLabTest(labTests){
+    let cost = 0
+    for (let i = 0; i < labTests.length; i++) {
+        if (labTests[i].checked) {
+            cost += parseFloat(labTests[i].value)
+        }
+
+    }
+    return cost
+}
 function calculateHealthCareCharges() {
-    let diagnostics = document.getElementsByClassName("diagnostics")
+    let diagnostics = document.getElementsByName("diagnostics")
     let care_level = document.getElementsByName("care_level")
     let lab_tests = document.getElementsByName("lab_tests");
+    let [levelOfCarEl,diagEl,LabTestEl,medRehabEl] = document.getElementsByClassName("costs")
     let rehab = document.getElementById("rehab");
+    let meds = document.getElementById("meds");
     let tot = document.getElementById("cost5");
+
     try {
-        validateInputs()
-        for (let i = 0; i < care_level.length; i++) {
-            if (care_level[i].checked) {
-                cost[0].innerHTML = parseFloat(care_level[i].value);
-                totalCost += parseFloat(care_level[i].value);
-            }
-            for (let i = 0; i < diagnostics.length; i++) {
-                if (diagnostics[i].checked) {
-                    cost[1].innerHTML = parseFloat(diagnostics[i].value)
-                    totalCost += parseFloat(diagnostics[i].value)
 
-                }
-            }
-            for (let i = 0; i < lab_tests.length; i++) {
-                if (lab_tests[i].checked) {
-                    cost[2].innerHTML = parseFloat(lab_tests[i].value)
-                    totalCost += parseFloat(lab_tests[i].value)
-                }
+        validateInputs(rehab,meds)
+        const careLevelCost = getCareLevelCost(care_level)
+        const diagnosticsCost = addDiagnostics(diagnostics)
+        const labTestsCost = addLabTest(lab_tests)
+        const medAndRehabCost = parseFloat(rehab.value) + parseFloat(meds.value)
+        const  totalCost = careLevelCost + diagnosticsCost + labTestsCost + medAndRehabCost
 
-            }
-            cost[3].innerHTML = rehab.value;
-            totalCost += rehab.value;
-            tot.innerHTML = totalCost;
+        tot.innerHTML = `$${totalCost.toFixed(2)}`;
+
+        levelOfCarEl.innerHTML = `$}`
 
 
-        }
-        chargesSummary.innerHTML = "The total cost is: $" + totalCost.toFixed(2);
+       // chargesSummary.innerHTML = "The total cost is: $" + totalCost.toFixed(2);
 
     } catch (error) {
         alert(error)
     }
-
-
 }
 
-if (meds.value == "") {
-    throw "Cost of meds textbox is empty. please enter a numeric value or 0 if there is no med charges";
 
-}
-function validateInputs() {
-    if (NaN(meds.value)) {
-        throw "invalid input. please enter a numeric value or 0 if there is no med charges";
-    }
-    if (rehab.value == "") {
+function validateInputs(rehab,meds) {
+    if (meds.value === "") {
         throw "Cost of meds textbox is empty. please enter a numeric value or 0 if there is no med charges";
 
     }
-    if (NaN(rehab.value)) {
+    if (isNaN(meds.value)) {
+        throw "invalid input. please enter a numeric value or 0 if there is no med charges";
+    }
+    if (rehab.value === "") {
+        throw "Cost of meds textbox is empty. please enter a numeric value or 0 if there is no med charges";
+
+    }
+    if (isNaN(rehab.value)) {
         throw "invalid input. please enter a numeric value or 0 if there is no med charges";
     }
 
 
-
 }
-
-function displayRandomHealthTip() {
-	const health_tips = document.getElementById("health_tips");
-	const shuffledHealthTips = [...HealthTips].sort(() => 0.5 - Math.random()).slice(0, 5)
-	shuffledHealthTips.forEach(tip => {
-		health_tips.innerHTML += `<div> ${tip}</div>`
-	})
-
-}
-
-displayRandomHealthTip();
 
 function clearInputsOutputs() {
-	rehab.innerHTML = " ";
-	meds.innerHTML = " ";
-	lab_tests = " ";
+    rehab.innerHTML = " ";
+    meds.innerHTML = " ";
+    lab_tests = " ";
+
+}
+
+function displayHealthAdvice() {
 
 }
 
 btnReset.addEventListener("click", clearInputsOutputs);
-
 btnSubmit.addEventListener("click", calculateHealthCareCharges);
