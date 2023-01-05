@@ -40,12 +40,18 @@ const btnSubmit = document.getElementById("btn2");
 
 function addCheckedValues(elements) {
     let cost = 0
-    for (let i = 0; i < elements.length; i++) {
-        if (elements[i].checked) {
-            cost += parseFloat(elements[i].value)
+    for (let el of elements) {
+        if(el.checked) {
+            cost += parseFloat(el.value)
         }
     }
     return cost
+// using functional construct
+    // return elements
+    //     .filter(el => el.checked)
+    //     .map(el => parseFloat(el.value))
+    //     .reduce((acc,val) => acc + val,0)
+
 }
 
 function formatDisplayCost(element,cost){
@@ -70,8 +76,6 @@ function calculateHealthCareCharges() {
         formatDisplayCost(diagEl,diagnosticsCost)
         formatDisplayCost(labTestsEl,labTestsCost)
         formatDisplayCost(totalCostsEl,totalCost)
-        rehab.innerText = " ";
-        meds.innerText = " ";
     } catch (error) {
         alert(error)
     }
