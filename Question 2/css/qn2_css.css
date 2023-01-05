@@ -110,4 +110,9 @@ tr:nth-child(5), tr:nth-child(6){
 }
 #health_tips {
 	padding-left: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
+
+
